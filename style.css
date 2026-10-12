@@ -1,0 +1,265 @@
+/* Colours and type follow the app's DroverTheme (android/core-ui). Dark only. */
+@font-face {
+    font-family: "Chakra Petch";
+    font-weight: 700;
+    font-display: swap;
+    src: url("fonts/chakra_petch_bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "JetBrains Mono";
+    font-weight: 100 800;
+    font-display: swap;
+    src: url("fonts/jetbrains_mono.ttf") format("truetype");
+}
+
+:root {
+    --ground: #0a0c0b;
+    --surface: #111513;
+    --sunken: #070908;
+    --chip: #1b211e;
+    --line: #2a322e;
+    --text: #e6ede8;
+    --text-secondary: #c9d3cd;
+    --text-muted: #8a968f;
+    --primary: #a3ff4f;
+    --primary-tint: #18240f;
+    --ember: #ffb13d;
+    --ember-tint: #2a1f0c;
+    --alarm: #ff5c4d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--text-secondary);
+    font: 14px/1.6 "JetBrains Mono", ui-monospace, monospace;
+}
+
+main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 16px 48px;
+}
+
+h1 {
+    margin: 0;
+    color: var(--primary);
+    font: 700 40px/1.1 "Chakra Petch", sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+section {
+    margin-top: 32px;
+}
+
+.label {
+    margin: 4px 0 24px;
+    color: var(--text-muted);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.card {
+    margin-top: 16px;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+}
+
+.card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.chip {
+    padding: 2px 8px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--chip);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.chip.ok {
+    color: var(--primary);
+    background: var(--primary-tint);
+}
+
+.chip.caution {
+    color: var(--ember);
+    background: var(--ember-tint);
+}
+
+.note {
+    margin: 12px 0 0;
+    color: var(--ember);
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 2px 16px;
+    margin: 12px 0;
+}
+
+.facts:empty {
+    display: none;
+}
+
+.facts dt {
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+.facts dd {
+    margin: 0;
+    color: var(--text);
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.status {
+    margin: 12px 0;
+    color: var(--text-muted);
+}
+
+.status.error,
+.warn {
+    color: var(--alarm);
+}
+
+button {
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font: 700 13px "JetBrains Mono", ui-monospace, monospace;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+button.primary {
+    background: var(--primary);
+    border: 1px solid var(--primary);
+    color: var(--ground);
+}
+
+button.secondary {
+    background: transparent;
+    border: 1px solid var(--line);
+    color: var(--text);
+}
+
+button:focus-visible,
+summary:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+details {
+    margin-top: 16px;
+}
+
+summary {
+    color: var(--text-muted);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.files {
+    width: 100%;
+    margin-top: 8px;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.files td {
+    padding: 6px 8px 6px 0;
+    border-top: 1px solid var(--line);
+    vertical-align: top;
+}
+
+.files .hash {
+    color: var(--text-muted);
+    overflow-wrap: anywhere;
+}
+
+ol,
+ul {
+    margin: 12px 0 0;
+    padding-left: 24px;
+}
+
+li {
+    margin-top: 8px;
+}
+
+b {
+    color: var(--text);
+}
+
+code {
+    padding: 1px 4px;
+    font: inherit;
+    background: var(--sunken);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+a {
+    color: var(--primary);
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* The install dialog is ESP Web Tools' own (Material); give it the same palette. */
+ewt-install-dialog {
+    --md-sys-color-primary: var(--primary);
+    --md-sys-color-on-primary: var(--ground);
+    --md-sys-color-surface: var(--surface);
+    --md-sys-color-surface-container: var(--surface);
+    --md-sys-color-surface-container-high: var(--surface);
+    --md-sys-color-surface-container-highest: var(--chip);
+    --md-sys-color-on-surface: var(--text);
+    --md-sys-color-on-surface-variant: var(--text-secondary);
+    --md-sys-color-secondary: var(--primary);
+    --md-sys-color-outline: var(--line);
+    --md-ref-typeface-brand: "JetBrains Mono", ui-monospace, monospace;
+    --md-ref-typeface-plain: "JetBrains Mono", ui-monospace, monospace;
+}

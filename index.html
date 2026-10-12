@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Drover dog flasher</title>
+<link rel="stylesheet" href="style.css">
+<script type="module" src="vendor/esp-web-tools/install-button.js"></script>
+<script type="module" src="flasher.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Drover</h1>
+    <p class="label">dog flasher / seeed xiao esp32-c5</p>
+  </header>
+
+  <p>
+    Flashes the wardrive node firmware onto a Seeed XIAO ESP32-C5 over USB, from this page.
+    The firmware only listens: it never transmits an 802.11 frame.
+  </p>
+
+  <section class="card" data-channel="release">
+    <div class="card-head">
+      <h2>release</h2>
+      <span class="chip ok">tagged</span>
+    </div>
+    <dl class="facts"></dl>
+    <p class="status">loading...</p>
+    <esp-web-install-button hidden>
+      <button slot="activate" class="primary">flash release</button>
+      <span slot="unsupported" class="warn">
+        this browser has no Web Serial. open this page in Chrome or Edge on a computer.
+      </span>
+      <span slot="not-allowed" class="warn">
+        Web Serial needs https. open this page over https.
+      </span>
+    </esp-web-install-button>
+    <details hidden>
+      <summary>files and sha-256</summary>
+      <table class="files"></table>
+    </details>
+  </section>
+
+  <section class="card" data-channel="main">
+    <div class="card-head">
+      <h2>main</h2>
+      <span class="chip caution">untested</span>
+    </div>
+    <p class="note">
+      Built from the newest commit on main. Nobody has run it on a board first.
+    </p>
+    <dl class="facts"></dl>
+    <p class="status">loading...</p>
+    <esp-web-install-button hidden>
+      <button slot="activate" class="secondary">flash main</button>
+      <span slot="unsupported" class="warn">
+        this browser has no Web Serial. open this page in Chrome or Edge on a computer.
+      </span>
+      <span slot="not-allowed" class="warn">
+        Web Serial needs https. open this page over https.
+      </span>
+    </esp-web-install-button>
+    <details hidden>
+      <summary>files and sha-256</summary>
+      <table class="files"></table>
+    </details>
+  </section>
+
+  <section>
+    <h2>steps</h2>
+    <ol>
+      <li>Plug the XIAO into this computer with a USB-C data cable.</li>
+      <li>Press a flash button and pick the port named <b>USB JTAG/serial debug unit</b>.</li>
+      <li>
+        Choose whether to erase. Erasing clears the dog's name, its configuration and its
+        Bluetooth bonds; without it they are kept and only the firmware changes.
+      </li>
+      <li>Wait for the install to finish. Do not unplug the board while it writes.</li>
+      <li>Open Drover on the phone and pair the dog from Fleet.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>if it does not work</h2>
+    <ul>
+      <li>
+        <b>no port in the list:</b> hold the BOOT button while plugging the board in, then
+        try again. On Linux your user must be in the <code>dialout</code> or
+        <code>uucp</code> group.
+      </li>
+      <li>
+        <b>port is busy:</b> close any serial monitor that has the port open.
+      </li>
+      <li>
+        <b>wrong chip:</b> this firmware is for the ESP32-C5 only and the flasher refuses
+        any other board.
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>
+      Flashing runs in your browser with
+      <a href="https://esphome.github.io/esp-web-tools/">ESP Web Tools</a>
+      (Apache-2.0), served from this site. The firmware goes from this page to the board
+      over USB.
+    </p>
+  </footer>
+</main>
+</body>
+</html>
