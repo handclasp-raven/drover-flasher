@@ -1,15 +1,15 @@
 {
   "channel": "main",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "tag": "",
-  "commit": "0ad1fb76968fa455bd4568841cd61280325605e6",
-  "built": "2026-10-13T16:27:06Z",
+  "commit": "ce943288b4ad3ca16a1052f8cb13cd86b9c1b564",
+  "built": "2026-10-15T07:26:55Z",
   "files": [
     {
       "name": "bootloader.bin",
       "offset": 8192,
       "size": 22304,
-      "sha256": "c8fb2fad186f83467420d19621767317654b2081a5384ac1af9ab5441566945f"
+      "sha256": "640651017ea642a478921444725f52e0c940f08f10d02334c32c4a465275ef55"
     },
     {
       "name": "partition-table.bin",
@@ -26,8 +26,8 @@
     {
       "name": "c5_wardrive_node.bin",
       "offset": 131072,
-      "size": 1275072,
-      "sha256": "86c666b060246503a96d5377245ad156168623502c7dda242dd5760e0826a5fb"
+      "size": 1292864,
+      "sha256": "ed7e275e93bd9b2d40f82a29a5cf59ac57e86351640d05f25bcbca7cfdc6e1c4"
     }
   ]
 }
