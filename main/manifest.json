@@ -1,6 +1,6 @@
 {
   "name": "Drover dog (XIAO ESP32-C5)",
-  "version": "0.0.5 (main ce94328)",
+  "version": "0.0.6 (main f759817)",
   "new_install_prompt_erase": true,
   "new_install_improv_wait_time": 0,
   "builds": [
@@ -8,7 +8,7 @@
       "chipFamily": "ESP32-C5",
       "parts": [
         {
-          "path": "bootloader.bin?h=640651017ea642a4",
+          "path": "bootloader.bin?h=998703b21376293e",
           "offset": 8192
         },
         {
@@ -20,7 +20,7 @@
           "offset": 102400
         },
         {
-          "path": "c5_wardrive_node.bin?h=ed7e275e93bd9b2d",
+          "path": "c5_wardrive_node.bin?h=9eb0e95f3dc0ac2c",
           "offset": 131072
         }
       ]
